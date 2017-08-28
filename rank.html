@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中秋献礼，感恩有你</title>
+</head>
+<script type="text/javascript">
+    (function (desW) {
+        var winW = document.documentElement.clientWidth || document.body.clientWidth;
+        document.documentElement.style.fontSize = winW / desW * 100 + 'px';
+    })(750);
+</script>
+<link rel="stylesheet" href="./main.css">
+<style type="text/css">
+    body {
+        font-size: 12px;
+        background: #333;
+    }
+
+    .tabNav {
+        margin: .5rem auto;
+        width: 7rem;
+        padding: .22rem;
+
+    }
+
+    .tabNav .rank,.tabNav .activeIntro,.tabNav .getWin{
+        float: left;
+        width: 2.3rem;
+        text-align: center;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: 0.35rem;
+        margin-left: .03rem;
+    }
+
+    .titleName {
+        background: #ccc;
+    }
+
+    .tabNav div:nth-child(1) {
+        margin-left: 0;
+    }
+    .rank .rankSection{
+        display: block;
+    }
+    .content {
+        position: absolute;
+        left: 0;
+        top: 1.74rem;
+        width: 7rem;
+        padding: .25rem;
+        display: none;
+    }
+
+    .rankClassify {
+        width: 7rem;
+        height: .8rem;
+        line-height: .8rem;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+    }
+
+    .rankClassify li {
+        font-size: 0.3rem;
+        color: #ffffff;
+    }
+    .rankItemContainer{
+        width: 7rem;
+        height: .8rem;
+        padding-top: .15rem;
+        line-height: .8rem;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+    }
+
+    .rankLists li {
+        font-size: 0.28rem;
+        color: #ffffff;
+    }
+    .rankItemContainer .userIcon{
+        width:.8rem;
+        height:.8rem;
+        border-radius: 50%;
+    }
+    .rankItemContainer .userIcon img{
+        border-radius: 50%;
+    }
+    .intro{
+        font-size: 0.23rem;
+        color: #aaa;
+        text-align: left;
+        height:.4rem;
+        line-height: .5rem;
+    }
+    .rankLists .rankItemContainer:nth-child(1) .fir{
+        color: blue;
+    }
+    .rankLists .rankItemContainer:nth-child(2) .fir{
+        color: red;
+    }
+    .rankLists .rankItemContainer:nth-child(3) .fir{
+        color: deeppink;
+    }
+</style>
+<body>
+<div class="tabNav">
+    <div class="rank">
+        <div class="titleName">排行榜</div>
+        <div class="content rankSection">
+            <p class="intro">以下是积分前十名用户的数据</p>
+            <ul class="rankClassify">
+                <li>排名</li>
+                <li>头像</li>
+                <li>网名</li>
+                <li>分数</li>
+            </ul>
+            <div class="rankLists">
+                <ul class="rankItemContainer">
+                    <li class="fir">NO 1</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li class="fir">NO 2</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li class="fir">NO 3</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 4</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 5</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 6</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 7</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 8</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 9</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li>NO 10</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="activeIntro">
+        <div class="titleName">活动介绍</div>
+        <ul class="content introSection">
+            <p class="intro">这个地方是很多的活动介绍</p>
+        </ul>
+    </div>
+    <div class="getWin">
+        <div class="titleName">获奖</div>
+        <ul class="content winSection">
+            <p class="intro">以下是积分前三名用户的数据</p>
+            <ul class="rankClassify">
+                <li>排名</li>
+                <li>头像</li>
+                <li>名称</li>
+                <li>分数</li>
+            </ul>
+            <div class="rankLists">
+                <ul class="rankItemContainer">
+                    <li class="fir">NO 1</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li class="fir">NO 2</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+                <ul class="rankItemContainer">
+                    <li class="fir">NO 3</li>
+                    <li class="userIcon"><img src="user.jpg" alt=""></li>
+                    <li>Carlton</li>
+                    <li>120</li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.titleName').click(function (e) {
+            if(e.target.className == 'titleName' && e.target.textContent == '排行榜'){
+                $('.rankSection').show(500).parent().siblings().children('.content').hide(300);
+            }else if(e.target.className == 'titleName' && e.target.textContent == '活动介绍'){
+                $('.introSection').show(500).parent().siblings().children('.content').hide(200);
+            }else if(e.target.className == 'titleName' && e.target.textContent == '获奖'){
+                $('.winSection').show(500).parent().siblings().children('.content').hide(200);
+            }
+        })
+    })
+</script>

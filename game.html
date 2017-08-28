@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中秋献礼，感恩有你</title>
+</head>
+<script>
+    (function (desW) {
+        var winW = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = winW / desW * 100 + 'px';
+    }(750));
+</script>
+<link rel="stylesheet" href="./main.css">
+<style type="text/css">
+    body{
+        background: linear-gradient(top left,#eee,skyblue,pink);
+        background: -webkit-linear-gradient(top left,#eee,skyblue,pink);
+        width:7.5rem;
+        height:13.34rem;
+    }
+    .box {
+        width: 6.2rem;
+        height: 6.2rem;
+        background: linear-gradient(top left,#eee,skyblue,pink);
+        background: -webkit-linear-gradient(top left,#eee,skyblue,pink);
+        margin: .3rem auto;
+        border: 1px solid #ccc;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: -webkit-flex;
+        align-content: space-around;
+        -webkit-align-content: space-around;
+        justify-content: -content: space-around;
+        -webkit-justify-content: space-around;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container li {
+        width: 40%;
+        height: 40%;
+        border: 1px solid #ccc;
+    }
+
+    .timeShow {
+        height: 1rem;
+        width: 2.5rem;
+        margin: 0 auto;
+        padding: 0.5rem;
+        text-align: center;
+        line-height: 1rem;
+        font-size: 0.35rem;
+    }
+
+    ._alert_floor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 7.5rem;
+        height: 13.34rem;
+        background: #333;
+        opacity: 0.8;
+        display: none;
+    }
+    ._alert_floor a{
+        display: block;
+        height:1rem;
+        line-height: 1rem;
+        background: forestgreen;
+        border-radius: .5rem;
+        margin-top: 0.3rem;
+        font-size: 0.35rem;
+        text-align: center;
+        color: #fff;
+    }
+    .rank{
+        width:5.5rem;
+        margin:0 auto;
+    }
+    .backToHome,.playAgain{
+        width:2.5rem;
+        margin-left: .5rem;
+        float: left;
+    }
+    .backToHome{
+        margin-left: 1rem;
+    }
+    .scoreShow{
+        width: 5.5rem;
+        height:3rem;
+        line-height: 3rem;
+        padding: 1rem;
+        text-align: center;
+        color: #ffffff;
+
+    }
+</style>
+<body>
+<div class="timeShow"></div>
+<div class="box">
+    <ul class="container">
+        <li><img src="./user.jpg" alt=""></li>
+        <li><img class='selected' src="./22.jpg" alt=""></li>
+        <li><img src="./user.jpg" alt=""></li>
+        <li><img src="./user.jpg" alt=""></li>
+    </ul>
+</div>
+<div class="_alert_floor">
+    <div class="scoreShow"></div>
+    <a class="rank" href="./rank.html">排行榜</a>
+    <a class="backToHome" href="./index.html">返回首页</a>
+    <a class="playAgain" href="./game.html">再玩一次</a>
+</div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var score = 0,
+            num = 1,
+            base = 40;
+        $('.container').on('click', 'li', function (e) {
+            num += 1;
+            if (e.target.tagName.toUpperCase() == 'IMG' && e.target.className == 'selected') {
+                num < 7 ? isTrue(num) : _change();
+                score += 1;
+            } else {
+                _alert();
+                clearInterval(timer);
+            }
+        });
+        $('li').click(function () {});
+
+        //点击正确的li
+        function isTrue(num) {
+            var count = num * 2 + 1,
+                newStr = '';
+            for (var i = 0; i < count; i++) {
+                newStr += '<li><img src="./user.jpg" alt=""></li>'
+            }
+            $('.container').append(newStr);
+            _change();
+            $('li').css({width: base * 0.75 + '%', height: base * 0.75 + '%'});
+            base = base * 0.8;
+        }
+
+        //随机改变唯一一张不一样图片的位置
+        function _change() {
+            var lastNum = $('.container').children().length,
+                ranNum = Math.floor(Math.random() * (lastNum + 1));
+            $('li').find('.selected').attr('src', './user.jpg').removeClass('selected');
+            $('li:eq(' + ranNum + ')').children().attr('src', './22.jpg').addClass('selected')
+        }
+
+
+        var the_s = 30;//定义剩余时间, 必须用时间戳.单位为秒
+        var timer = window.setInterval(function () {
+            if (the_s >= 0) {
+                timeMinus();
+            } else {
+                _alert();
+                clearInterval(timer);
+            }
+        }, 1000);
+
+        //倒计时
+        function timeMinus() {
+            var f = (the_s) % 60;
+            f >= 10 ? f = f : f = '0' + f;
+            var str = "还剩<b>&nbsp00" + ":" + '00' + ":" + f;
+            $('.timeShow').html(str);
+            the_s--;
+        }
+
+        //结束弹出层
+        function _alert() {
+            $('._alert_floor').show(100);
+            $('.scoreShow').html(score)
+        }
+
+
+    })
+
+
+</script>
